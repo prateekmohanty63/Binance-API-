@@ -7,5 +7,13 @@
   </head>
   <body>
     <b>Hello</b>
+
+    <script>
+        var binanceSocket = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@aggTrade");
+        console.log(binanceSocket)
+        binanceSocket.onmessage = function (event) {
+  console.log(event.data);
+}
+    </script>
   </body>
 </html>
