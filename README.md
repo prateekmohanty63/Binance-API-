@@ -5,3 +5,6 @@ end point = wss://stream.binance.com:9443/ws/btcusdt@aggTrade
 
 # for candle stick chart
 end point = wss://stream.binance.com:9443/ws/btcusdt@kline_5m
+
+# saving incoming data to a file
+end point = wss://stream.binance.com:9443/ws/btcusdt@kline_5m | tee dataset.txt
