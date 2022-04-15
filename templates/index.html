@@ -13,16 +13,31 @@
 
     <div id="trades"></div>
 
-    <form action="" method="post">
-    <input type="text" id="quantity" name="quantity" placeholder="eg 0.001"/>
-    <select id="symbol" name="symbol">
-    <!-- symbols -->
-    {% for symbol in symbols %}
-     <option> {{symbol['symbol']}}</option>
+    <div style="border: solid gray 1px; padding: 20px;width: 600px; margin-top: 20px ;">
+      Buy crypto
+      % with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
     {% endfor %}
-  </select>
-  <input type="submit" name="buy" value="buy">
-</form>
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+      <form action="" method="post">
+        <input type="text" id="quantity" name="quantity" placeholder="eg 0.001"/>
+        <select id="symbol" name="symbol">
+        <!-- symbols -->
+        {% for symbol in symbols %}
+         <option> {{symbol['symbol']}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" name="buy" value="buy">
+    </form>
+    </div>
+
+   
     <div id="my_balances">
       <h2>Balances</h2>
 
